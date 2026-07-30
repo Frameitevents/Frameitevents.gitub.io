@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Frame It Events — Event Stylist Sydney</title>
+
+<!-- SEO -->
+<meta name="description" content="Sydney's premium event styling studio. We style weddings, birthdays, engagements, baby showers and brand events across Sydney. Full setup and pack-down included. Get a free consultation today."/>
+<meta name="keywords" content="event stylist Sydney, event styling Sydney, wedding stylist Sydney, birthday styling Sydney, baby shower styling, engagement party styling, event decor Sydney, photo booth Sydney"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://frameitevents.github.io/"/>
+
+<!-- Open Graph (social sharing) -->
+<meta property="og:title" content="Frame It Events — Event Stylist Sydney"/>
+<meta property="og:description" content="Luxury event styling for weddings, birthdays, engagements and more. Based in Sydney. Full setup and pack-down included."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://frameitevents.github.io/"/>
+<meta property="og:image" content="https://frameitevents.github.io/photo-chandelier.jpg"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8732A' rx='5'/%3E%3Ctext x='16' y='23' font-family='Georgia%2Cserif' font-size='19' font-weight='400' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,700;1,6..96,300;1,6..96,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  /* Brand orange — sparingly: CTAs, logo, eyebrows, thin rules */
+  --or:    #E8732A;
+  --or-dk: #C45D18;
+  --or-lt: #F0914A;
+
+  /* Deep sage — dark sections only (services + FAQ + footer) */
+  --gn:    #0C4A28;
+  --gn-md: #1A6B3A;
+  --gn-lt: #2E8A50;
+
+  /* Sage-lime — brand colour, used only as whisper tints */
+  --sage:     #C9DC82;
+  --sage-10:  rgba(201,220,130,.10);
+  --sage-18:  rgba(201,220,130,.18);
+
+  /* Cream palette — dominates 90 % of the site */
+  --cream:  #FAF8F2;   /* primary bg */
+  --ivory:  #F4EFE2;   /* alternate light bg */
+  --parch:  #EDE8D8;   /* parchment, deepest light tone */
+
+  /* Champagne gold — accents on dark */
+  --gold:   #C9A456;
+  --gold-lt:#E2C47E;
+
+  /* Typography */
+  --ink:    #181508;   /* near-black, warm */
+  --mid:    #504C26;   /* warm olive for body copy */
+  --muted:  #888560;   /* muted for labels */
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;font-weight:300;background:var(--cream);color:var(--ink);overflow-x:hidden;cursor:none}
+
+/* ── GRAIN ── */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.022;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:300px}
+
+/* ── SCROLL PROGRESS ── */
+#prog{position:fixed;top:0;left:0;height:1.5px;background:var(--or);z-index:9998;width:0;transition:width .08s linear}
+
+/* ── CUSTOM CURSOR ── */
+.cur-dot{position:fixed;width:5px;height:5px;border-radius:50%;background:var(--or);pointer-events:none;z-index:9997;transform:translate(-50%,-50%);will-change:transform}
+.cur-ring{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(232,115,42,.4);pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,opacity .3s;will-change:transform}
+.cur-ring.hov{width:52px;height:52px;border-color:var(--or)}
+.cur-ring.lt{border-color:rgba(250,248,242,.4)}
+.cur-dot.lt{background:var(--cream)}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 4rem;
+  background:rgba(250,248,242,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(232,115,42,.1);
+  transition:box-shadow .4s;
+}
+nav.up{box-shadow:0 2px 40px rgba(24,21,8,.07)}
+.nav-logo{text-decoration:none}
+.logo-main{font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:400;color:var(--ink);letter-spacing:.06em;display:block;line-height:1.1}
+.logo-main em{color:var(--or);font-style:normal}
+.logo-sub{font-family:'Great Vibes',cursive;font-size:.9rem;color:var(--muted);display:block;line-height:1.2}
+.nav-links{display:flex;gap:2.8rem;list-style:none}
+.nav-links a{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;font-weight:400}
+.nav-links a:hover{color:var(--or)}
+.nav-btn{
+  background:transparent;border:1px solid var(--or);color:var(--or);
+  padding:.6rem 1.6rem;font-family:'Montserrat',sans-serif;
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:none;
+  transition:background .3s,color .3s,transform .2s;
+}
+.nav-btn:hover{background:var(--or);color:#fff;transform:translateY(-1px)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none}
+.ham span{width:22px;height:1px;background:var(--ink);display:block;transition:all .3s}
+
+/* Mobile */
+.mob{display:none;position:fixed;inset:0;background:var(--ink);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.4rem}
+.mob.open{display:flex}
+.mob a{font-family:'Bodoni Moda',serif;font-size:2.4rem;font-weight:300;color:var(--cream);text-decoration:none;transition:color .25s}
+.mob a:hover{color:var(--or)}
+.mob-x{position:absolute;top:1.6rem;right:2rem;color:rgba(250,248,242,.4);font-size:1.6rem;background:none;border:none;cursor:pointer}
+.mob-cta{background:var(--or);color:#fff!important;padding:.8rem 2.4rem;font-family:'Montserrat',sans-serif!important;font-size:.68rem!important;letter-spacing:.22em;text-transform:uppercase;font-weight:500!important}
+
+/* ── HERO ── */
+#hero{position:relative;height:calc(100vh - 72px);min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;will-change:transform;
+  background:
+    linear-gradient(170deg,rgba(20,14,6,.72) 0%,rgba(12,8,2,.88) 60%,rgba(6,4,1,.92) 100%),
+    url('photo-chandelier.jpg') center/cover no-repeat;
+}
+/* particles */
+.hero-pts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.pt{position:absolute;border-radius:50%;opacity:0;animation:pdrift linear infinite}
+@keyframes pdrift{0%{opacity:0;transform:translateY(0) scale(.6)}15%{opacity:.55}85%{opacity:.3}100%{opacity:0;transform:translateY(-90vh) scale(1.8)}}
+
+.hero-in{position:relative;z-index:2;padding:2rem;max-width:960px}
+.hero-script{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2rem,4vw,3rem);
+  color:var(--gold-lt);
+  display:block;margin-bottom:.8rem;
+  text-shadow:0 2px 20px rgba(0,0,0,.5);
+  opacity:0;transform:translateY(16px);
+  animation:fu 1s .2s forwards;
+}
+.hero-title{
+  font-family:'Bodoni Moda',serif;
+  font-size:clamp(3.5rem,10vw,9rem);
+  font-weight:300;line-height:1;
+  color:#fff;margin-bottom:2rem;
+  text-shadow:0 4px 40px rgba(0,0,0,.6);
+}
+.hero-title .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero-title .w i{display:inline-block;opacity:0;transform:translateY(105%);animation:ws 1.1s cubic-bezier(.16,1,.3,1) forwards}
+.hero-title em{font-style:italic;color:rgba(232,115,42,.88)}
+.hero-rule{width:44px;height:1px;background:rgba(201,164,86,.6);margin:0 auto 2rem;opacity:0;animation:fu 1s .95s forwards}
+.hero-sub{
+  font-size:clamp(.76rem,1.4vw,.88rem);font-weight:300;
+  letter-spacing:.22em;color:rgba(255,255,255,.7);
+  margin-bottom:3rem;text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+  opacity:0;animation:fu 1s 1.1s forwards;
+}
+.hero-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fu 1s 1.3s forwards}
+
+.btn-or{
+  padding:1rem 2.8rem;background:var(--or);color:#fff;
+  text-decoration:none;font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;font-weight:500;border:1px solid var(--or);
+  cursor:none;position:relative;overflow:hidden;display:inline-block;
+  transition:background .35s,transform .25s;
+}
+.btn-or::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.14);transform:translateX(-110%);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.btn-or:hover::before{transform:translateX(0)}
+.btn-or:hover{background:var(--or-dk);transform:translateY(-2px)}
+.btn-ghost{
+  padding:1rem 2.8rem;background:transparent;color:rgba(255,255,255,.8);
+  text-decoration:none;font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;border:1px solid rgba(255,255,255,.3);
+  cursor:none;display:inline-block;transition:all .35s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.7);color:#fff;transform:translateY(-2px)}
+
+.sc{position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fu 1s 1.9s forwards}
+.sc span{font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+.sc-line{width:1px;height:50px;background:linear-gradient(to bottom,rgba(232,115,42,.5),transparent);animation:sp 2.4s ease-in-out 2.4s infinite}
+@keyframes sp{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.2;transform:scaleY(.3)}}
+
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+@keyframes ws{to{opacity:1;transform:translateY(0)}}
+
+/* ── STATS ── */
+#stats{background:var(--ivory);padding:2.4rem 2rem;border-bottom:1px solid rgba(80,76,38,.1)}
+.stats-in{display:flex;justify-content:center;max-width:960px;margin:0 auto;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;padding:.8rem 2.5rem;border-right:1px solid rgba(80,76,38,.1);display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Bodoni Moda',serif;font-size:2.2rem;font-weight:300;color:var(--or);line-height:1}
+.stat-l{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:400}
+
+/* ── SHARED ── */
+.ey{font-family:'Great Vibes',cursive;font-size:1.75rem;color:var(--or);display:block;margin-bottom:.5rem}
+.ey-gn{color:var(--gold)}
+.h2{font-family:'Bodoni Moda',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.14;color:var(--ink)}
+.h2 em{font-style:italic;color:var(--or)}
+.h2-lt{color:var(--ink)}
+.h2-lt em{color:var(--or)}
+.body-copy{font-size:.9rem;font-weight:300;line-height:1.96;color:var(--mid);max-width:540px}
+.body-lt{color:var(--mid)}
+.rule{width:40px;height:1px;background:var(--or);margin:1.6rem 0}
+.rule-c{margin:1.6rem auto}
+.rule-gn{background:var(--or)}
+
+/* Reveals */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-l{opacity:0;transform:translateX(-38px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv-r{opacity:0;transform:translateX(38px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv.on,.rv-l.on,.rv-r.on{opacity:1;transform:none}
+
+/* ── INTRO ── */
+#intro{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;padding:11rem 4rem}
+.img-frame{position:relative}
+.img-clip{overflow:hidden;clip-path:inset(0 100% 0 0);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1)}
+.img-clip.on{clip-path:inset(0 0% 0 0)}
+.img-clip img{width:100%;height:560px;object-fit:cover;display:block;transform:scale(1.07);transition:transform 1.3s cubic-bezier(.16,1,.3,1)}
+.img-clip.on img{transform:scale(1)}
+.img-frame::before{content:'';position:absolute;top:-20px;left:-20px;right:20px;bottom:20px;border:1px solid rgba(232,115,42,.18);z-index:-1;opacity:0;transition:opacity .9s .6s}
+.img-frame.on::before{opacity:1}
+.frame-badge{position:absolute;bottom:-1.4rem;right:-1.4rem;background:var(--gn);color:#fff;padding:1.6rem 1.8rem;text-align:center;z-index:1}
+.frame-badge strong{display:block;font-family:'Bodoni Moda',serif;font-size:2.4rem;font-weight:300;color:var(--gold-lt);line-height:1}
+.frame-badge span{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,248,242,.55)}
+.intro-txt .body-copy{max-width:100%}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:2rem 0 2.4rem}
+.tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.38rem .95rem;border:1px solid rgba(80,76,38,.2);color:var(--muted);background:transparent;cursor:default;transition:all .3s}
+.tag:hover{border-color:var(--or);color:var(--or)}
+
+/* ── SERVICES ── */
+#services{background:var(--ivory);padding:11rem 2rem 8rem;position:relative}
+#services::before,#services::after{display:none}
+.svc-head{text-align:center;position:relative;z-index:1;margin-bottom:4rem}
+.evt-tab-row{display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:900px;margin:0 auto;border-bottom:1px solid rgba(80,76,38,.12)}
+.evt-tb{padding:.9rem 1.8rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:none;font-family:'Montserrat',sans-serif;font-weight:400;transition:color .3s;position:relative}
+.evt-tb::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--or);transform:scaleX(0);transform-origin:center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.evt-tb.on{color:var(--or)}
+.evt-tb.on::after{transform:scaleX(1)}
+.evt-tb:hover:not(.on){color:var(--ink)}
+.evt-panels{max-width:1100px;margin:0 auto}
+.evt-panel{display:none;grid-template-columns:1fr 1fr;gap:7rem;align-items:start;padding:5rem 2rem 0}
+.evt-panel.on{display:grid;animation:fu .6s forwards}
+.evt-eyebrow{font-family:'Great Vibes',cursive;font-size:1.6rem;color:var(--or);display:block;margin-bottom:.6rem}
+.evt-title{font-family:'Bodoni Moda',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.12;color:var(--ink);margin-bottom:1.4rem}
+.evt-title em{font-style:italic;color:var(--or)}
+.evt-copy{font-size:.9rem;font-weight:300;line-height:1.94;color:var(--mid);margin-bottom:2.4rem}
+.evt-cta{display:inline-block;padding:.95rem 2.6rem;background:var(--or);color:#fff;text-decoration:none;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;cursor:none;transition:background .3s,transform .22s}
+.evt-cta:hover{background:var(--or-dk);transform:translateY(-2px)}
+.evt-right-label{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or);font-weight:500;display:block;margin-bottom:1.4rem}
+.evt-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.evt-pill{font-size:.75rem;font-weight:300;letter-spacing:.06em;padding:.55rem 1.1rem;border:1px solid rgba(80,76,38,.18);color:var(--mid);background:var(--cream);transition:border-color .25s,color .25s}
+.evt-pill:hover{border-color:var(--or);color:var(--or)}
+
+/* ── QUOTE ── */
+#quote{background:var(--or);padding:3.2rem 2rem;position:relative;z-index:2}
+.q-in{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.4rem;flex-wrap:wrap}
+.q-in p{font-family:'Bodoni Moda',serif;font-size:clamp(1.1rem,2.4vw,1.55rem);font-style:italic;font-weight:300;color:#fff;flex:1;min-width:260px}
+.q-in a{background:#fff;color:var(--or);padding:.8rem 2.2rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;text-decoration:none;flex-shrink:0;cursor:none;transition:all .3s}
+.q-in a:hover{background:var(--ink);color:#fff}
+
+/* ── GALLERY ── */
+#gallery{background:var(--ivory);padding:11rem 2rem;text-align:center;position:relative;z-index:2}
+.g-tabs{display:inline-flex;gap:0;margin:3rem auto 4rem;border:1px solid rgba(80,76,38,.18)}
+.gtab{padding:.7rem 2rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:transparent;border:none;border-right:1px solid rgba(80,76,38,.12);cursor:none;font-family:'Montserrat',sans-serif;font-weight:400;transition:all .28s}
+.gtab:last-child{border-right:none}
+.gtab.on{background:var(--gn);color:#fff;border-color:var(--gn)}
+.gtab:hover:not(.on){color:var(--or)}
+
+.g-pane{display:none}
+.g-pane.on{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:230px;gap:.4rem;max-width:1240px;margin:0 auto}
+.g-i:nth-child(1){grid-column:span 7;grid-row:span 2}
+.g-i:nth-child(2){grid-column:span 5}
+.g-i:nth-child(3){grid-column:span 5}
+.g-i:nth-child(4){grid-column:span 4}
+.g-i:nth-child(5){grid-column:span 4}
+.g-i:nth-child(6){grid-column:span 4}
+.g-i{overflow:hidden;position:relative;cursor:zoom-in}
+.g-i img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(.88);transition:transform .8s cubic-bezier(.16,1,.3,1),filter .6s}
+.g-i:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.05)}
+.g-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(36,59,20,.75) 0%,transparent 55%);opacity:0;transition:opacity .45s;display:flex;align-items:flex-end;padding:1.4rem}
+.g-i:hover .g-ov{opacity:1}
+.g-ov span{font-family:'Bodoni Moda',serif;font-size:.92rem;font-style:italic;color:#fff;transform:translateY(6px);transition:transform .45s}
+.g-i:hover .g-ov span{transform:translateY(0)}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;background:rgba(18,15,5,.97);z-index:9000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#lb.open{opacity:1;pointer-events:all}
+#lb img{max-width:92vw;max-height:90vh;object-fit:contain;transform:scale(.93);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+#lb.open img{transform:scale(1)}
+.lb-x{position:fixed;top:1.6rem;right:2rem;color:rgba(255,255,255,.38);font-size:1.6rem;background:none;border:none;cursor:pointer;transition:color .2s}
+.lb-x:hover{color:#fff}
+
+/* ── TESTIMONIALS ── */
+#testi{background:var(--cream);padding:11rem 2rem}
+.testi-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:8rem;align-items:start}
+.testi-label{padding-top:2rem}
+.t-slider{position:relative;min-height:280px}
+.t-slide{display:none}
+.t-slide.on{display:block;animation:tslide .7s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes tslide{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.t-stars{display:flex;gap:4px;margin-bottom:1.8rem}
+.t-stars span{color:var(--or);font-size:.88rem}
+.t-quote{font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2.8vw,1.7rem);font-weight:300;font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:2rem}
+.t-sage-rule{width:36px;height:2px;background:#C9DC82;margin-bottom:1.4rem;opacity:1}
+.t-name{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.t-type{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--or);margin-top:.2rem}
+.t-dots{display:flex;gap:.6rem;margin-top:2.8rem}
+.t-dot{width:24px;height:1px;background:rgba(80,76,38,.2);border:none;cursor:none;transition:all .3s;position:relative}
+.t-dot::after{content:'';position:absolute;inset:0;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.t-dot.on{width:48px}
+.t-dot.on::after{transform:scaleX(1)}
+
+/* ── PROCESS ── */
+#process{background:var(--ivory);padding:11rem 2rem;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:5.5rem auto 0;position:relative}
+.steps::before{content:'';position:absolute;top:2.4rem;left:12%;right:12%;height:1px;background:rgba(80,76,38,.12)}
+.step{padding:0 2rem}
+.step-c{width:50px;height:50px;border-radius:50%;background:var(--ivory);border:1px solid rgba(232,115,42,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-family:'Bodoni Moda',serif;font-size:.98rem;color:var(--or);font-weight:400;position:relative;z-index:1;transition:all .4s cubic-bezier(.4,0,.2,1)}
+.step:hover .step-c{background:var(--or);border-color:var(--or);color:#fff;transform:scale(1.1)}
+.step h4{font-family:'Bodoni Moda',serif;font-size:1.1rem;font-weight:300;color:var(--ink);margin-bottom:.7rem;letter-spacing:.02em}
+.step p{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.76}
+
+/* ── ABOUT ── */
+#about{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:7rem;align-items:center;padding:11rem 4rem}
+.about-img-wrap{position:relative}
+.about-clip{overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1)}
+.about-clip.on{clip-path:inset(0 0 0% 0)}
+.about-clip img{width:100%;height:580px;object-fit:cover;display:block;transform:scale(1.07);transition:transform 1.3s cubic-bezier(.16,1,.3,1)}
+.about-clip.on img{transform:scale(1)}
+.about-img-wrap::after{content:'';position:absolute;bottom:-20px;right:-20px;left:20px;top:20px;border:1px solid rgba(232,115,42,.15);z-index:-1;opacity:0;transition:opacity .9s .6s}
+.about-img-wrap.on::after{opacity:1}
+.about-txt .body-copy{max-width:100%;margin-bottom:1.2rem}
+.val{list-style:none;margin:1.8rem 0 2.4rem;display:flex;flex-direction:column;gap:1rem}
+.val li{display:flex;align-items:flex-start;gap:.9rem}
+.val li::before{content:'';width:18px;height:1px;background:var(--or);flex-shrink:0;margin-top:.72rem}
+.val li span{font-size:.86rem;font-weight:300;color:var(--mid);line-height:1.65}
+.val li strong{color:var(--ink);font-weight:400}
+
+/* ── FAQ ── */
+#faq{background:var(--parch);padding:11rem 2rem;position:relative}
+#faq::before{display:none}
+.faq-in{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.faq-list{margin-top:3.5rem;border-top:1px solid rgba(80,76,38,.12)}
+.faq-item{border-bottom:1px solid rgba(80,76,38,.12)}
+.faq-q{width:100%;background:none;border:none;color:var(--ink);font-family:'Bodoni Moda',serif;font-size:1.08rem;font-weight:300;text-align:left;padding:1.7rem 3rem 1.7rem 0;cursor:none;position:relative;transition:color .3s;letter-spacing:.02em}
+.faq-q:hover{color:var(--or)}
+.faq-q::after{content:'';position:absolute;right:.2rem;top:52%;width:13px;height:13px;border-right:1px solid var(--or);border-bottom:1px solid var(--or);transform:translateY(-65%) rotate(45deg);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-q::after{transform:translateY(-30%) rotate(225deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:260px}
+.faq-a p{padding:0 0 1.7rem;font-size:.87rem;font-weight:300;line-height:1.88;color:var(--mid)}
+
+/* ── BOOK ── */
+#book{background:var(--cream);padding:11rem 2rem}
+.book-in{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;max-width:1100px;margin:0 auto;align-items:start}
+.book-l .body-copy{max-width:100%}
+.avail{
+  background:var(--sage-10);
+  border-left:1px solid var(--gn);
+  padding:1.1rem 1.4rem;margin:2rem 0;
+  font-size:.82rem;color:var(--ink);font-weight:400;letter-spacing:.02em;
+}
+.avail strong{color:var(--gn-md)}
+.c-row{display:flex;align-items:center;gap:.9rem;margin-top:.9rem}
+.c-row svg{width:16px;height:16px;color:var(--or);flex-shrink:0}
+.c-row span{font-size:.84rem;font-weight:300;color:var(--mid)}
+.soc{display:flex;gap:.6rem;margin-top:2rem}
+.soc a{width:38px;height:38px;border:1px solid rgba(80,76,38,.18);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;cursor:none;transition:all .3s}
+.soc a:hover{background:var(--or);border-color:var(--or);color:#fff}
+.soc svg{width:16px;height:16px}
+
+.form{display:flex;flex-direction:column;gap:1.2rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.fg{display:flex;flex-direction:column;gap:.42rem}
+.fg label{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);font-weight:500}
+.fg input,.fg textarea,.fg select{background:transparent;border:none;border-bottom:1px solid rgba(80,76,38,.2);padding:.65rem 0;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:300;color:var(--ink);outline:none;appearance:none;transition:border-color .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(80,76,38,.28)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--or)}
+.fg textarea{resize:none;height:90px}
+.btn-sub{padding:1.05rem 3rem;background:var(--gn);color:#fff;border:none;font-family:'Montserrat',sans-serif;font-size:.63rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;cursor:none;transition:background .3s,transform .22s;align-self:flex-start;margin-top:.4rem;position:relative;overflow:hidden}
+.btn-sub::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.13);transform:translateX(-110%);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.btn-sub:hover::before{transform:translateX(0)}
+.btn-sub:hover{background:var(--gn-md);transform:translateY(-2px)}
+.f-note{font-size:.68rem;color:var(--muted);font-weight:300;display:flex;align-items:center;gap:.4rem}
+.f-note::before{content:'✓';color:var(--gn-lt);font-size:.75rem}
+.form-ok{display:none;padding:3.5rem 2rem;text-align:center;background:var(--sage-10);border:1px solid rgba(201,220,130,.35)}
+.form-ok.show{display:block}
+.form-ok h3{font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:300;color:var(--gn);margin-bottom:.7rem}
+.form-ok p{font-size:.88rem;font-weight:300;color:var(--mid)}
+
+/* Float CTA mobile */
+.float-cta{display:none;position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:90;background:var(--or);color:#fff;padding:.85rem 2.2rem;font-family:'Montserrat',sans-serif;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;text-decoration:none;cursor:none;box-shadow:0 8px 28px rgba(232,115,42,.38);white-space:nowrap;transition:background .3s,opacity .3s}
+.float-cta:hover{background:var(--or-dk)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
+.ft-name{font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:300;color:#fff;display:block;letter-spacing:.06em}
+.ft-name em{color:var(--or);font-style:normal}
+.ft-script{font-family:'Great Vibes',cursive;font-size:1.4rem;color:var(--gold);display:block;margin:.2rem 0 2.4rem}
+.ft-links{display:flex;gap:2.8rem;justify-content:center;list-style:none;margin-bottom:2rem;flex-wrap:wrap}
+.ft-links a{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold)}
+.ft-copy{font-size:.64rem;color:rgba(255,255,255,.16);letter-spacing:.08em}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  #intro,#about{grid-template-columns:1fr;gap:3.5rem;padding:7rem 2rem}
+  .book-in{grid-template-columns:1fr;gap:4rem}
+  .evt-panel.on{grid-template-columns:1fr;gap:3rem}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps::before{display:none}
+  .testi-in{grid-template-columns:1fr;gap:3rem}
+  .g-pane.on{grid-template-columns:repeat(6,1fr)}
+  .g-i:nth-child(1){grid-column:span 6}
+  .g-i:nth-child(2),.g-i:nth-child(3){grid-column:span 3}
+  .g-i:nth-child(4),.g-i:nth-child(5),.g-i:nth-child(6){grid-column:span 2}
+  #services::before,#services::after,#faq::before{display:none}
+}
+@media(max-width:680px){
+  /* Nav */
+  nav{padding:1.1rem 1.6rem}
+  .nav-links,.nav-btn{display:none}
+  .ham{display:flex}
+
+  /* Cursor */
+  body{cursor:auto;padding-bottom:72px}
+  .cur-dot,.cur-ring{display:none}
+  .evt-tb,.evt-cta,.btn-or,.btn-ghost,.gtab,.q-in a,.btn-sub,
+  .faq-q,.t-dot,.float-cta{cursor:pointer!important}
+
+  /* Floating CTA */
+  .float-cta{display:block;bottom:1rem;padding:.85rem 2rem;font-size:.62rem}
+  footer{padding-bottom:5rem}
+
+  /* Hero */
+  .hero-btns{flex-direction:column;align-items:center;gap:.8rem}
+  .btn-or,.btn-ghost{width:100%;max-width:300px;text-align:center;padding:.9rem 1.4rem}
+
+  /* Stats */
+  .stat{min-width:110px;padding:.7rem 1rem}
+  .stat-n{font-size:1.8rem}
+
+  /* Images — fix huge heights */
+  .img-clip img{height:260px}
+  .about-clip img{height:260px}
+  .frame-badge{position:relative;bottom:auto;right:auto;margin-top:1.2rem;display:inline-flex;flex-direction:column;align-items:center}
+
+  /* Section spacing */
+  #services{padding:6rem 1.4rem 5rem}
+  #gallery{padding:6rem 1.4rem 5rem}
+  #process{padding:6rem 1.4rem 5rem}
+  #faq{padding:6rem 1.4rem 5rem}
+  #book{padding:6rem 1.4rem 5rem}
+
+  /* Services tabs */
+  .evt-tab-row{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .evt-tab-row::-webkit-scrollbar{display:none}
+  .evt-tb{white-space:nowrap;flex-shrink:0;padding:.8rem 1.2rem;font-size:.58rem;letter-spacing:.14em}
+  .evt-panel.on{padding:3rem 0 0;gap:2.5rem}
+  .evt-cta{display:block;text-align:center}
+
+  /* Quote strip */
+  .q-in{flex-direction:column;text-align:center;gap:1.4rem}
+  .q-in a{width:100%;text-align:center;max-width:300px}
+
+  /* Gallery */
+  .steps{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .g-pane.on{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+  .g-i{grid-column:span 1!important;grid-row:span 1!important}
+  .g-i:nth-child(1),.g-i:nth-child(4){grid-column:span 2!important}
+  .g-tabs{flex-wrap:wrap;border:none;gap:4px;justify-content:center}
+  .gtab{border:1px solid rgba(80,76,38,.18)!important;padding:.65rem 1.2rem;font-size:.58rem}
+
+  /* Testimonials */
+  .t-quote{font-size:.86rem;line-height:1.84}
+  .t-dot{width:10px;height:10px;min-width:10px}
+
+  /* Form — prevent iOS zoom on inputs */
+  .fg input,.fg textarea,.fg select{font-size:16px}
+  .btn-sub{width:100%;text-align:center;align-self:stretch}
+
+  /* FAQ */
+  .faq-q{font-size:.88rem;padding:1.2rem 3rem 1.2rem 0;text-align:left}
+}
+
+@media(max-width:400px){
+  /* Very small phones */
+  .g-pane.on{grid-template-columns:1fr;grid-auto-rows:260px}
+  .g-i:nth-child(1),.g-i:nth-child(4){grid-column:span 1!important}
+  .stat{min-width:90px;padding:.6rem .7rem}
+  .stat-n{font-size:1.6rem}
+  .stat-l{font-size:.5rem;letter-spacing:.14em}
+}
+</style>
+</head>
+<body>
+
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+<div id="prog"></div>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="#intro" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#testi" onclick="closeMob()">Reviews</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#book" onclick="closeMob()" class="mob-cta">Check My Date →</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <span class="logo-main">Frame It <em>Events</em></span>
+    <span class="logo-sub">Sydney</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#intro">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testi">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="nav-btn" href="#book">Check My Date</a>
+  <button class="ham" onclick="openMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-pts" id="heroPts"></div>
+  <div class="hero-in">
+    <span class="hero-script">Sydney's Event Stylists</span>
+    <h1 class="hero-title" id="heroT">
+      Your event,<br><em>beautifully</em><br>framed.
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Backdrops &nbsp;·&nbsp; Florals &nbsp;·&nbsp; Balloon Installations &nbsp;·&nbsp; Photo Moments</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-or">Check My Date →</a>
+      <a href="#gallery" class="btn-ghost">View Our Work</a>
+    </div>
+  </div>
+  <div class="sc">
+    <div class="sc-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-in">
+    <div class="stat"><span class="stat-n" data-count="100" data-sfx="%">0</span><span class="stat-l">5-Star Rated</span></div>
+    <div class="stat"><span class="stat-n" data-count="24" data-sfx="hr">0</span><span class="stat-l">Response Time</span></div>
+    <div class="stat"><span class="stat-n">Free</span><span class="stat-l">Consultation</span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="img-frame rv-l" id="introF">
+    <div class="img-clip">
+      <img src="photo-blue-backdrop.jpg" alt="Beautifully styled event" loading="lazy"/>
+    </div>
+    <div class="frame-badge">
+      <strong>100%</strong>
+      <span>5-Star Reviews</span>
+    </div>
+  </div>
+  <div class="intro-txt rv-r">
+    <span class="ey">Our Story</span>
+    <h2 class="h2">Clean, modern &amp;<br><em>photo-ready.</em></h2>
+    <div class="rule"></div>
+    <p class="body-copy">Frame It Events is a Sydney-based event styling studio specialising in backdrops, frames, balloon installations, and floral styling. We create moments that look extraordinary in real life and on social media, then handle every bit of setup and pack-down so your day is completely stress-free.</p>
+    <div class="tags">
+      <span class="tag">Birthdays</span>
+      <span class="tag">Engagements</span>
+      <span class="tag">Baby Showers</span>
+      <span class="tag">Brand Events</span>
+      <span class="tag">Private Celebrations</span>
+    </div>
+    <a href="#book" class="btn-or">Start Planning Your Event →</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" style="position:relative;z-index:2;margin-top:5rem">
+  <div class="svc-head rv">
+    <span class="ey">What We Do</span>
+    <h2 class="h2">We style <em>every</em> kind<br>of celebration.</h2>
+    <div class="rule rule-c"></div>
+    <p class="body-copy" style="margin:0 auto;text-align:center">Tell us what you're planning and we'll show you how we can make it beautiful.</p>
+  </div>
+  <div class="evt-tab-row rv">
+    <button class="evt-tb on" onclick="evtTab('wd',this)">Weddings</button>
+    <button class="evt-tb" onclick="evtTab('bd',this)">Birthdays</button>
+    <button class="evt-tb" onclick="evtTab('en',this)">Engagements</button>
+    <button class="evt-tb" onclick="evtTab('bs',this)">Baby Showers</button>
+    <button class="evt-tb" onclick="evtTab('br',this)">Brand Events</button>
+    <button class="evt-tb" onclick="evtTab('kd',this)">Kids Parties</button>
+    <button class="evt-tb" onclick="evtTab('pv',this)">Private Events</button>
+  </div>
+  <div class="evt-panels">
+    <div class="evt-panel on" id="ep-wd">
+      <div>
+        <span class="evt-eyebrow">Weddings</span>
+        <h3 class="evt-title">Your wedding day,<br><em>perfectly styled.</em></h3>
+        <p class="evt-copy">Your wedding day only happens once. We make sure every detail looks incredible, from the ceremony backdrop to the reception tablescape. Beautiful, coordinated styling that photographs brilliantly and feels even better in person. We handle all setup and pack-down so you and your family don't have to think about a thing.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Wedding →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Ceremony backdrop or arch</span>
+          <span class="evt-pill">Floral arrangements</span>
+          <span class="evt-pill">Tablescape &amp; centrepieces</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Custom neon or acrylic signage</span>
+          <span class="evt-pill">Aisle &amp; entrance styling</span>
+          <span class="evt-pill">Balloon installations</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-bd">
+      <div>
+        <span class="evt-eyebrow">Birthdays</span>
+        <h3 class="evt-title">Your birthday,<br><em>unforgettable.</em></h3>
+        <p class="evt-copy">Whether it's a milestone 21st, a glamorous 30th or a big family celebration, we build the setup that makes the whole room stop and stare. We handle everything so you actually get to enjoy your own party.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Birthday →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Custom backdrop or frame</span>
+          <span class="evt-pill">Balloon arch or installation</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Neon or acrylic signage</span>
+          <span class="evt-pill">Cake table styling</span>
+          <span class="evt-pill">Florals &amp; centrepieces</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-en">
+      <div>
+        <span class="evt-eyebrow">Engagements</span>
+        <h3 class="evt-title">A moment worth<br><em>celebrating.</em></h3>
+        <p class="evt-copy">You said yes. Now let's make the party match the moment. We create romantic, elegant setups that feel luxurious without trying too hard. Styled to look stunning in photos and even better in real life.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Engagement →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Floral backdrop or frame</span>
+          <span class="evt-pill">Tablescape styling</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Custom neon sign</span>
+          <span class="evt-pill">Floral arrangements</span>
+          <span class="evt-pill">Personalised signage</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-bs">
+      <div>
+        <span class="evt-eyebrow">Baby Showers</span>
+        <h3 class="evt-title">Soft, pretty<br><em>and so special.</em></h3>
+        <p class="evt-copy">Baby showers deserve the full treatment. We style the kind of setup that makes guests gasp when they walk in and keeps everyone reaching for their phone all afternoon. Beautiful, personal, completely handled.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Baby Shower →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Balloon arch or garland</span>
+          <span class="evt-pill">Backdrop &amp; frame</span>
+          <span class="evt-pill">Soft floral arrangements</span>
+          <span class="evt-pill">Themed tablescape</span>
+          <span class="evt-pill">Custom props &amp; signs</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-br">
+      <div>
+        <span class="evt-eyebrow">Brand Events</span>
+        <h3 class="evt-title">Your brand,<br><em>beautifully presented.</em></h3>
+        <p class="evt-copy">Product launches, activations, pop-ups and corporate events. We create styled environments that reflect your brand and give every guest something worth posting. Professional, polished, content-ready.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Event →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Branded backdrop build</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Custom neon or LED signage</span>
+          <span class="evt-pill">Branded props &amp; styling</span>
+          <span class="evt-pill">Floral or balloon feature</span>
+          <span class="evt-pill">Acrylic signage &amp; menus</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-kd">
+      <div>
+        <span class="evt-eyebrow">Kids Parties</span>
+        <h3 class="evt-title">Big fun,<br><em>beautifully styled.</em></h3>
+        <p class="evt-copy">Kids parties can look incredible without looking chaotic. We bring colour, personality and a whole lot of fun to every setup. Themed, playful and still completely Instagram-worthy for the parents too.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Kids Party →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Themed balloon arch</span>
+          <span class="evt-pill">Colourful backdrop</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Custom name signage</span>
+          <span class="evt-pill">Themed props &amp; decorations</span>
+          <span class="evt-pill">Cake table styling</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+    <div class="evt-panel" id="ep-pv">
+      <div>
+        <span class="evt-eyebrow">Private Events</span>
+        <h3 class="evt-title">Any celebration,<br><em>any vision.</em></h3>
+        <p class="evt-copy">Got something different in mind? We love a brief that doesn't fit a box. Dinner parties, anniversaries, farewell events, bridal showers. Bring us your idea and we'll make it happen.</p>
+        <a href="#book" class="evt-cta">Enquire About Your Event →</a>
+      </div>
+      <div>
+        <span class="evt-right-label">What we typically include</span>
+        <div class="evt-pills">
+          <span class="evt-pill">Custom backdrop or installation</span>
+          <span class="evt-pill">Balloon features</span>
+          <span class="evt-pill">Florals &amp; tablescapes</span>
+          <span class="evt-pill">Photo booth</span>
+          <span class="evt-pill">Personalised signage</span>
+          <span class="evt-pill">Custom props</span>
+          <span class="evt-pill">Full setup &amp; pack-down</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div id="quote" style="position:relative;z-index:2">
+  <div class="q-in">
+    <p>"Honestly the most stress-free event experience I've ever had. Every single guest asked who did the styling."</p>
+    <a href="#testi">Read All Reviews →</a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery" style="position:relative;z-index:2">
+  <span class="ey rv" style="display:block;text-align:center">Our Portfolio</span>
+  <h2 class="h2 rv" style="text-align:center">A few of our<br>favourite <em>frames.</em></h2>
+  <div class="rule rule-c rv"></div>
+  <p class="body-copy rv" style="margin:0 auto;text-align:center">Each event is unique. Browse by aesthetic to find your inspiration.</p>
+
+  <div class="g-tabs rv">
+    <button class="gtab on" onclick="gTab('all',this)">All Work</button>
+    <button class="gtab" onclick="gTab('rustic',this)">Weddings</button>
+    <button class="gtab" onclick="gTab('coastal',this)">Backdrops</button>
+    <button class="gtab" onclick="gTab('modern',this)">Details</button>
+  </div>
+
+  <div class="g-pane on" id="g-all">
+    <div class="g-i rv" data-cap="Chandelier Rose Backdrop"><img src="photo-chandelier.jpg" alt="Chandelier with white roses backdrop" loading="lazy"/><div class="g-ov"><span>Chandelier Rose Backdrop</span></div></div>
+    <div class="g-i rv" data-cap="Blue Hydrangea Installation"><img src="photo-blue-backdrop.jpg" alt="Blue hydrangea floral column" loading="lazy"/><div class="g-ov"><span>Blue Hydrangea Installation</span></div></div>
+    <div class="g-i rv" data-cap="Blue Floral Detail"><img src="photo-blue-detail.jpg" alt="Blue and white hydrangea detail" loading="lazy"/><div class="g-ov"><span>Blue Floral Detail</span></div></div>
+    <div class="g-i rv" data-cap="Burgundy Backdrop"><img src="photo-burgundy.jpg" alt="Burgundy and cream elaborate backdrop" loading="lazy"/><div class="g-ov"><span>Burgundy Backdrop</span></div></div>
+    <div class="g-i rv" data-cap="White &amp; Green Backdrop"><img src="photo-green-eucalyptus.jpg" alt="White and green eucalyptus backdrop" loading="lazy"/><div class="g-ov"><span>White &amp; Green Backdrop</span></div></div>
+    <div class="g-i rv" data-cap="Pink Rose Tablescape"><img src="photo-pink-tablescape.jpg" alt="Pink roses and glass candelabra tablescape" loading="lazy"/><div class="g-ov"><span>Pink Rose Tablescape</span></div></div>
+    <div class="g-i rv" data-cap="Green Floral Tower"><img src="photo-green-tower.jpg" alt="White and green dramatic floral installation" loading="lazy"/><div class="g-ov"><span>Green Floral Tower</span></div></div>
+    <div class="g-i rv" data-cap="Wedding Reception"><img src="photo-reception.jpg" alt="Wedding reception with photo booth" loading="lazy"/><div class="g-ov"><span>Wedding Reception</span></div></div>
+  </div>
+  <div class="g-pane" id="g-rustic">
+    <div class="g-i" data-cap="Chandelier Rose Backdrop"><img src="photo-chandelier.jpg" alt="Chandelier with white roses backdrop" loading="lazy"/><div class="g-ov"><span>Chandelier Rose Backdrop</span></div></div>
+    <div class="g-i" data-cap="Blue Hydrangea Installation"><img src="photo-blue-backdrop.jpg" alt="Blue hydrangea floral column" loading="lazy"/><div class="g-ov"><span>Blue Hydrangea Installation</span></div></div>
+    <div class="g-i" data-cap="Burgundy Backdrop"><img src="photo-burgundy.jpg" alt="Burgundy and cream backdrop" loading="lazy"/><div class="g-ov"><span>Burgundy Backdrop</span></div></div>
+    <div class="g-i" data-cap="Wedding Reception"><img src="photo-reception.jpg" alt="Wedding reception" loading="lazy"/><div class="g-ov"><span>Wedding Reception</span></div></div>
+  </div>
+  <div class="g-pane" id="g-coastal">
+    <div class="g-i" data-cap="Blue Floral Detail"><img src="photo-blue-detail.jpg" alt="Blue hydrangea detail" loading="lazy"/><div class="g-ov"><span>Blue Floral Detail</span></div></div>
+    <div class="g-i" data-cap="White &amp; Green Backdrop"><img src="photo-green-eucalyptus.jpg" alt="White and green eucalyptus backdrop" loading="lazy"/><div class="g-ov"><span>White &amp; Green Backdrop</span></div></div>
+    <div class="g-i" data-cap="Green Floral Tower"><img src="photo-green-tower.jpg" alt="Green floral tower" loading="lazy"/><div class="g-ov"><span>Green Floral Tower</span></div></div>
+  </div>
+  <div class="g-pane" id="g-modern">
+    <div class="g-i" data-cap="Pink Rose Tablescape"><img src="photo-pink-tablescape.jpg" alt="Pink roses candelabra tablescape" loading="lazy"/><div class="g-ov"><span>Pink Rose Tablescape</span></div></div>
+    <div class="g-i" data-cap="Chandelier Rose Backdrop"><img src="photo-chandelier.jpg" alt="Chandelier white roses" loading="lazy"/><div class="g-ov"><span>Chandelier Rose Backdrop</span></div></div>
+    <div class="g-i" data-cap="Burgundy Backdrop"><img src="photo-burgundy.jpg" alt="Burgundy backdrop" loading="lazy"/><div class="g-ov"><span>Burgundy Backdrop</span></div></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLb()">
+  <button class="lb-x" onclick="closeLb()">✕</button>
+  <img id="lbImg" src="" alt="" onclick="event.stopPropagation()"/>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="testi-in">
+    <div class="testi-label rv-l">
+      <span class="ey">What Our Clients Say</span>
+      <h2 class="h2">Real events.<br><em>Real reactions.</em></h2>
+      <div class="rule"></div>
+      <p class="body-copy">Every celebration we touch becomes a memory our clients carry with them long after the last guest leaves.</p>
+    </div>
+    <div class="rv-r">
+      <div class="t-slider">
+        <div class="t-slide on">
+          <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="t-quote">"Wow! These ladies were amazing to work with from the day I booked with them to the end of the night. They were the hands behind the scenes on my wedding day and honestly without them nothing would have been as beautiful as they made it. They went above and beyond despite some last minute changes. This business deserves all the love in the world."</p>
+          <div class="t-sage-rule"></div>
+          <div class="t-name">Tarni Lane</div>
+          <div class="t-type">Wedding · Google Review</div>
+        </div>
+        <div class="t-slide">
+          <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="t-quote">"Huge thank you to this amazing decorating team for making our wedding venue look absolutely beautiful. The tables and the arch were styled perfectly and everything looked elegant and magical. They were professional, friendly, and paid great attention to every detail. We received so many compliments from our guests. Highly recommend!"</p>
+          <div class="t-sage-rule"></div>
+          <div class="t-name">Tanya Dzhula</div>
+          <div class="t-type">Wedding · Google Review</div>
+        </div>
+        <div class="t-slide">
+          <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="t-quote">"I organised my birthday with Frame It Events and I couldn't recommend them more. From the beginning, their communication was clear, thorough, and incredibly professional. Every detail was executed beautifully, and the final result exceeded my expectations."</p>
+          <div class="t-sage-rule"></div>
+          <div class="t-name">Rhiannon</div>
+          <div class="t-type">Birthday · Google Review</div>
+        </div>
+        <div class="t-slide">
+          <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="t-quote">"Such a great experience with Frame It! Professional and provided a personal experience. The add on of a photographer for my event was also such a great time saver for me!!"</p>
+          <div class="t-sage-rule"></div>
+          <div class="t-name">Stephanie Thistlethwaite</div>
+          <div class="t-type">Event · Google Review</div>
+        </div>
+        <div class="t-slide">
+          <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="t-quote">"I had booked them for a birthday decoration, it was last minute but they were able to decorate beautifully! I recommend them, great people."</p>
+          <div class="t-sage-rule"></div>
+          <div class="t-name">Santhosh Muralitharan</div>
+          <div class="t-type">Birthday · Google Review</div>
+        </div>
+      </div>
+      <div class="t-dots">
+        <button class="t-dot on" onclick="goT(0)"></button>
+        <button class="t-dot" onclick="goT(1)"></button>
+        <button class="t-dot" onclick="goT(2)"></button>
+        <button class="t-dot" onclick="goT(3)"></button>
+        <button class="t-dot" onclick="goT(4)"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <span class="ey rv" style="display:block;text-align:center">How It Works</span>
+  <h2 class="h2 rv" style="text-align:center">From idea to <em>extraordinary.</em></h2>
+  <div class="rule rule-c rv"></div>
+  <p class="body-copy rv" style="margin:0 auto;text-align:center;max-width:500px">Four simple steps. Then all you have to do is show up and celebrate.</p>
+  <div class="steps">
+    <div class="step rv" style="transition-delay:.06s"><div class="step-c">01</div><h4>Enquire</h4><p>Tell us your event date and vision. We get back to you within 24 hours for a free chat.</p></div>
+    <div class="step rv" style="transition-delay:.13s"><div class="step-c">02</div><h4>Design</h4><p>We put together a styling concept built around your vibe, budget, and venue.</p></div>
+    <div class="step rv" style="transition-delay:.2s"><div class="step-c">03</div><h4>We Style</h4><p>Our team arrives early and transforms the space. Full setup handled. You don't lift a finger.</p></div>
+    <div class="step rv" style="transition-delay:.27s"><div class="step-c">04</div><h4>You Celebrate</h4><p>Arrive to a gorgeous, photo-ready event. We come back and pack everything down after.</p></div>
+  </div>
+  <div class="rv" style="text-align:center;margin-top:4.5rem"><a href="#book" class="btn-or">Start With a Free Consultation →</a></div>
+</section>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-img-wrap rv-l" id="aboutF">
+    <div class="about-clip">
+      <img src="photo-pink-tablescape.jpg" alt="Frame It Events" loading="lazy"/>
+    </div>
+  </div>
+  <div class="about-txt rv-r">
+    <span class="ey">About Us</span>
+    <h2 class="h2">Making events<br><em>worth remembering.</em></h2>
+    <div class="rule"></div>
+    <p class="body-copy">Frame It Events was built on one belief: your celebration should look as extraordinary as it feels. We're a Sydney-based studio passionate about creating styled moments that stop guests in their tracks and keep your notifications going for days after.</p>
+    <p class="body-copy" style="margin-top:1rem">Whether you have a fully formed vision or just a feeling, we'll bring it to life. Clean, modern, photo-ready styling across Greater Sydney.</p>
+    <ul class="val">
+      <li><span><strong>Luxury &amp; Detail.</strong> Every element is chosen with care.</span></li>
+      <li><span><strong>Tailored to You.</strong> Every event looks completely different.</span></li>
+      <li><span><strong>Full Service.</strong> We set up and pack down, always.</span></li>
+    </ul>
+    <a href="#book" class="btn-or">Book Your Free Consult →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq" style="position:relative;z-index:2;margin-top:5rem">
+  <div class="faq-in">
+    <span class="ey rv" style="display:block;position:relative">Got Questions?</span>
+    <h2 class="h2 rv" style="position:relative">Everything you <em>need to know.</em></h2>
+    <div class="rule rv"></div>
+    <div class="faq-list rv">
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How far in advance should I book?</button><div class="faq-a"><p>We recommend booking 4–6 weeks ahead for most events, and 2–3 months for larger events or peak periods. Popular dates fill up fast.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What types of events do you style?</button><div class="faq-a"><p>Birthdays, engagement parties, baby showers, bridal showers, kids' parties, brand launches, corporate events, and private celebrations.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">Do you handle setup and pack-down?</button><div class="faq-a"><p>Always. We arrive before your guests, set everything up to perfection, and return after to pack it all down. You don't need to think about a single thing on the day.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">How does pricing work?</button><div class="faq-a"><p>Every event is custom quoted based on your vision, venue, and requirements. Get in touch for a free, no-obligation consultation and quote.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What if I don't know what style I want?</button><div class="faq-a"><p>That's completely fine. We'll walk you through a free consultation, ask the right questions, and come back with a concept you'll love. You don't need a clear vision to get started.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="book-in">
+    <div class="book-l rv-l">
+      <span class="ey">Let's Get Started</span>
+      <h2 class="h2">Your date might<br>still be <em>available.</em></h2>
+      <div class="rule"></div>
+      <p class="body-copy">Tell us about your event and we'll respond within 24 hours with availability and a free styling consultation.</p>
+      <div class="avail"><strong>✦ Limited 2026 dates remaining.</strong> We recommend checking availability as soon as possible to secure your preferred date.</div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+61 470 425 931</span></div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>FrameItSydney@gmail.com</span></div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sydney, Australia</span></div>
+      <div class="soc">
+        <a href="https://www.instagram.com/frame.itevents/" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.tiktok.com/@frame.itevents" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="rv-r">
+      <form class="form" id="form" onsubmit="sub(event)">
+        <div class="f-row">
+          <div class="fg"><label>First Name *</label><input type="text" placeholder="Your first name" required/></div>
+          <div class="fg"><label>Last Name *</label><input type="text" placeholder="Your last name" required/></div>
+        </div>
+        <div class="fg"><label>Email *</label><input type="email" placeholder="your@email.com" required/></div>
+        <div class="fg"><label>Phone</label><input type="tel" placeholder="+61 000 000 000"/></div>
+        <div class="f-row">
+          <div class="fg"><label>Event Date</label><input type="date"/></div>
+          <div class="fg"><label>Event Type</label><select><option value="" disabled selected>Select type</option><option>Birthday</option><option>Engagement Party</option><option>Baby Shower</option><option>Bridal Shower</option><option>Brand / Corporate</option><option>Kids' Party</option><option>Other</option></select></div>
+        </div>
+        <div class="fg"><label>Your Vision</label><textarea placeholder="Describe your event, theme, or ideas…"></textarea></div>
+        <button type="submit" class="btn-sub">Check My Date &amp; Availability →</button>
+        <p class="f-note">Free consultation, no obligation. We respond within 24 hours.</p>
+      </form>
+      <div class="form-ok" id="formOk">
+        <h3>You're all set.</h3>
+        <p>We've received your enquiry and will be in touch within 24 hours to confirm availability and begin planning something beautiful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-name">Frame It <em>Events</em></span>
+  <span class="ft-script">We Style. We Frame. You Celebrate.</span>
+  <ul class="ft-links">
+    <li><a href="#intro">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testi">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#book">Contact</a></li>
+  </ul>
+  <p class="ft-copy">© 2026 Frame It Events &nbsp;·&nbsp; Sydney, Australia &nbsp;·&nbsp; FrameItSydney@gmail.com</p>
+</footer>
+
+<a class="float-cta" href="#book" id="floatCta">Check My Date →</a>
+
+<script>
+/* CURSOR */
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;
+});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(a)})();
+document.querySelectorAll('a,button,.tag,.gtab,.g-i').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('hov'));
+});
+/* cursor light on hero only */
+new IntersectionObserver(en=>{
+  en.forEach(e=>{
+    if(e.isIntersecting&&e.intersectionRatio>.3){dot.classList.add('lt');ring.classList.add('lt')}
+    else{dot.classList.remove('lt');ring.classList.remove('lt')}
+  });
+},{threshold:[0,.3,1]}).observe(document.querySelector('#hero'));
+
+/* SCROLL PROGRESS + NAV */
+const prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.width=(window.scrollY/h*100)+'%';
+  document.getElementById('nav').classList.toggle('up',window.scrollY>30);
+  const book=document.getElementById('book');
+  const fc=document.getElementById('floatCta');
+  if(book){const r=book.getBoundingClientRect();fc.style.opacity=r.top<window.innerHeight?0:1;fc.style.pointerEvents=r.top<window.innerHeight?'none':'auto'}
+},{passive:true});
+
+/* HERO PARALLAX */
+const hbg=document.getElementById('heroBg');
+window.addEventListener('scroll',()=>{hbg.style.transform=`translateY(${window.scrollY*.28}px)`},{passive:true});
+
+/* HERO PARTICLES */
+const pc=document.getElementById('heroPts');
+['rgba(232,115,42,.65)','rgba(201,220,130,.55)','rgba(201,164,86,.5)','rgba(250,248,242,.38)'].forEach((c,ci)=>{
+  for(let i=0;i<6;i++){
+    const p=document.createElement('div');p.className='pt';
+    const s=3+Math.random()*6;
+    p.style.cssText=`width:${s}px;height:${s}px;background:${c};left:${Math.random()*100}%;bottom:${-5-Math.random()*8}%;animation-duration:${8+Math.random()*12}s;animation-delay:${Math.random()*9}s`;
+    pc.appendChild(p);
+  }
+});
+
+/* HERO WORD SPLIT */
+(function(){
+  const el=document.getElementById('heroT');if(!el)return;
+  const html=el.innerHTML;
+  let d=.35,out='';
+  html.split(/(<[^>]+>|\s+|[^\s<]+)/g).forEach(p=>{
+    if(!p)return;
+    if(/^</.test(p)){out+=p}
+    else if(/^\s+$/.test(p)){out+=' '}
+    else{out+=`<span class="w"><i style="animation-delay:${d}s">${p}</i></span>`;d+=.1}
+  });
+  el.innerHTML=out;
+})();
+
+/* REVEAL */
+const rvEls=document.querySelectorAll('.rv,.rv-l,.rv-r');
+new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rvEls.forEach&&null}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'}).observe&&
+new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on')}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'}).forEach?null:
+(()=>{const o=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on')}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'});rvEls.forEach(el=>o.observe(el));})();
+
+/* IMAGE CLIP REVEALS */
+['introF','aboutF'].forEach(id=>{
+  const el=document.getElementById(id);if(!el)return;
+  new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.querySelector('.img-clip,.about-clip')?.classList.add('on');e.target.classList.add('on')}});},{threshold:.15}).observe(el);
+});
+
+/* COUNTERS */
+document.querySelectorAll('.stat-n[data-count]').forEach(el=>{
+  new IntersectionObserver(en=>{
+    if(!en[0].isIntersecting)return;
+    const t=+el.dataset.count,sfx=el.dataset.sfx||'';
+    let c=0;const iv=setInterval(()=>{c=Math.min(c+t/60,t);el.textContent=Math.round(c)+sfx;if(c>=t)clearInterval(iv)},1400/60);
+  },{threshold:.5}).observe(el);
+});
+
+/* EVENT TABS */
+function evtTab(id,btn){
+  document.querySelectorAll('.evt-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.evt-tb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('ep-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+
+/* GALLERY */
+function gTab(id,btn){
+  document.querySelectorAll('.g-pane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('g-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+
+/* LIGHTBOX */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+document.querySelectorAll('.g-i').forEach(item=>{
+  item.addEventListener('click',()=>{
+    lbImg.src=item.querySelector('img').src.replace(/w=\d+/,'w=1600');
+    lb.classList.add('open');document.body.style.overflow='hidden';
+  });
+});
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* TESTIMONIALS */
+let cur=0,ti=setInterval(()=>goT((cur+1)%3),5500);
+function goT(i){
+  document.querySelectorAll('.t-slide').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.t-dot').forEach(d=>d.classList.remove('on'));
+  cur=i;document.querySelectorAll('.t-slide')[i].classList.add('on');
+  document.querySelectorAll('.t-dot')[i].classList.add('on');
+  clearInterval(ti);ti=setInterval(()=>goT((cur+1)%3),5500);
+}
+
+/* FAQ */
+function faq(btn){
+  const it=btn.closest('.faq-item'),op=it.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!op)it.classList.add('open');
+}
+
+/* MOBILE MENU */
+function openMob(){document.getElementById('mob').classList.add('open');document.body.style.overflow='hidden'}
+function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
+
+/* FORM */
+function sub(e){e.preventDefault();document.getElementById('form').style.display='none';document.getElementById('formOk').classList.add('show')}
+
+/* MAGNETIC BUTTONS */
+document.querySelectorAll('.btn-or,.btn-ghost,.nav-btn,.btn-sub').forEach(b=>{
+  b.addEventListener('mousemove',e=>{
+    const r=b.getBoundingClientRect();
+    b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.15}px,${(e.clientY-r.top-r.height/2)*.15}px) translateY(-2px)`;
+  });
+  b.addEventListener('mouseleave',()=>{b.style.transform=''});
+});
+</script>
+</body>
+</html>
