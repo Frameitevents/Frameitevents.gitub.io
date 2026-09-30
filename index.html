@@ -273,6 +273,7 @@ nav.up{box-shadow:0 2px 40px rgba(24,21,8,.07)}
 .g-i:nth-child(4){grid-column:span 4}
 .g-i:nth-child(5){grid-column:span 4}
 .g-i:nth-child(6){grid-column:span 4}
+.g-i:nth-child(7),.g-i:nth-child(8){grid-column:span 6}
 .g-i{overflow:hidden;position:relative;cursor:zoom-in}
 .g-i img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(.88);transition:transform .8s cubic-bezier(.16,1,.3,1),filter .6s}
 .g-i:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.05)}
@@ -384,6 +385,10 @@ nav.up{box-shadow:0 2px 40px rgba(24,21,8,.07)}
 .f-note::before{content:'✓';color:var(--gn-lt);font-size:.75rem}
 .form-ok{display:none;padding:3.5rem 2rem;text-align:center;background:var(--sage-10);border:1px solid rgba(201,220,130,.35)}
 .form-ok.show{display:block}
+.f-err{display:none;font-size:.8rem;color:#A33A12;line-height:1.6}
+.f-err.show{display:block}
+.f-err a{color:inherit}
+.btn-sub:disabled{opacity:.6;pointer-events:none}
 .form-ok h3{font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:300;color:var(--gn);margin-bottom:.7rem}
 .form-ok p{font-size:.88rem;font-weight:300;color:var(--mid)}
 
@@ -397,9 +402,9 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
 .ft-name em{color:var(--or);font-style:normal}
 .ft-script{font-family:'Great Vibes',cursive;font-size:1.4rem;color:var(--gold);display:block;margin:.2rem 0 2.4rem}
 .ft-links{display:flex;gap:2.8rem;justify-content:center;list-style:none;margin-bottom:2rem;flex-wrap:wrap}
-.ft-links a{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);text-decoration:none;transition:color .3s}
+.ft-links a{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}
 .ft-links a:hover{color:var(--gold)}
-.ft-copy{font-size:.64rem;color:rgba(255,255,255,.16);letter-spacing:.08em}
+.ft-copy{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
@@ -414,6 +419,7 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
   .g-i:nth-child(1){grid-column:span 6}
   .g-i:nth-child(2),.g-i:nth-child(3){grid-column:span 3}
   .g-i:nth-child(4),.g-i:nth-child(5),.g-i:nth-child(6){grid-column:span 2}
+  .g-i:nth-child(7),.g-i:nth-child(8){grid-column:span 3}
   #services::before,#services::after,#faq::before{display:none}
 }
 @media(max-width:680px){
@@ -855,11 +861,11 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
         </div>
       </div>
       <div class="t-dots">
-        <button class="t-dot on" onclick="goT(0)"></button>
-        <button class="t-dot" onclick="goT(1)"></button>
-        <button class="t-dot" onclick="goT(2)"></button>
-        <button class="t-dot" onclick="goT(3)"></button>
-        <button class="t-dot" onclick="goT(4)"></button>
+        <button class="t-dot on" onclick="goT(0)" aria-label="Show review 1"></button>
+        <button class="t-dot" onclick="goT(1)" aria-label="Show review 2"></button>
+        <button class="t-dot" onclick="goT(2)" aria-label="Show review 3"></button>
+        <button class="t-dot" onclick="goT(3)" aria-label="Show review 4"></button>
+        <button class="t-dot" onclick="goT(4)" aria-label="Show review 5"></button>
       </div>
     </div>
   </div>
@@ -910,7 +916,7 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
     <div class="rule rv"></div>
     <div class="faq-list rv">
       <div class="faq-item"><button class="faq-q" onclick="faq(this)">How far in advance should I book?</button><div class="faq-a"><p>We recommend booking 4–6 weeks ahead for most events, and 2–3 months for larger events or peak periods. Popular dates fill up fast.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What types of events do you style?</button><div class="faq-a"><p>Birthdays, engagement parties, baby showers, bridal showers, kids' parties, brand launches, corporate events, and private celebrations.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faq(this)">What types of events do you style?</button><div class="faq-a"><p>Weddings, birthdays, engagement parties, baby showers, bridal showers, kids' parties, brand launches, corporate events, and private celebrations.</p></div></div>
       <div class="faq-item"><button class="faq-q" onclick="faq(this)">Do you handle setup and pack-down?</button><div class="faq-a"><p>Always. We arrive before your guests, set everything up to perfection, and return after to pack it all down. You don't need to think about a single thing on the day.</p></div></div>
       <div class="faq-item"><button class="faq-q" onclick="faq(this)">How does pricing work?</button><div class="faq-a"><p>Every event is custom quoted based on your vision, venue, and requirements. Get in touch for a free, no-obligation consultation and quote.</p></div></div>
       <div class="faq-item"><button class="faq-q" onclick="faq(this)">What if I don't know what style I want?</button><div class="faq-a"><p>That's completely fine. We'll walk you through a free consultation, ask the right questions, and come back with a concept you'll love. You don't need a clear vision to get started.</p></div></div>
@@ -926,7 +932,7 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
       <h2 class="h2">Your date might<br>still be <em>available.</em></h2>
       <div class="rule"></div>
       <p class="body-copy">Tell us about your event and we'll respond within 24 hours with availability and a free styling consultation.</p>
-      <div class="avail"><strong>✦ Limited 2026 dates remaining.</strong> We recommend checking availability as soon as possible to secure your preferred date.</div>
+      <div class="avail"><strong>✦ Popular dates book out fast.</strong> We recommend checking availability as soon as possible to secure your preferred date.</div>
       <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+61 470 425 931</span></div>
       <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>FrameItSydney@gmail.com</span></div>
       <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sydney, Australia</span></div>
@@ -938,17 +944,19 @@ footer{background:var(--ink);padding:4.5rem 2rem 2.5rem;text-align:center}
     <div class="rv-r">
       <form class="form" id="form" onsubmit="sub(event)">
         <div class="f-row">
-          <div class="fg"><label>First Name *</label><input type="text" placeholder="Your first name" required/></div>
-          <div class="fg"><label>Last Name *</label><input type="text" placeholder="Your last name" required/></div>
+          <div class="fg"><label for="fFirst">First Name *</label><input id="fFirst" name="first_name" type="text" placeholder="Your first name" required/></div>
+          <div class="fg"><label for="fLast">Last Name *</label><input id="fLast" name="last_name" type="text" placeholder="Your last name" required/></div>
         </div>
-        <div class="fg"><label>Email *</label><input type="email" placeholder="your@email.com" required/></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+61 000 000 000"/></div>
+        <div class="fg"><label for="fEmail">Email *</label><input id="fEmail" name="email" type="email" placeholder="your@email.com" required/></div>
+        <div class="fg"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" placeholder="+61 000 000 000"/></div>
         <div class="f-row">
-          <div class="fg"><label>Event Date</label><input type="date"/></div>
-          <div class="fg"><label>Event Type</label><select><option value="" disabled selected>Select type</option><option>Birthday</option><option>Engagement Party</option><option>Baby Shower</option><option>Bridal Shower</option><option>Brand / Corporate</option><option>Kids' Party</option><option>Other</option></select></div>
+          <div class="fg"><label for="fDate">Event Date</label><input id="fDate" name="event_date" type="date"/></div>
+          <div class="fg"><label for="fType">Event Type</label><select id="fType" name="event_type"><option value="" disabled selected>Select type</option><option>Wedding</option><option>Birthday</option><option>Engagement Party</option><option>Baby Shower</option><option>Bridal Shower</option><option>Brand / Corporate</option><option>Kids' Party</option><option>Other</option></select></div>
         </div>
-        <div class="fg"><label>Your Vision</label><textarea placeholder="Describe your event, theme, or ideas…"></textarea></div>
+        <div class="fg"><label for="fVision">Your Vision</label><textarea id="fVision" name="vision" placeholder="Describe your event, theme, or ideas…"></textarea></div>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
         <button type="submit" class="btn-sub">Check My Date &amp; Availability →</button>
+        <p class="f-err" id="formErr" role="alert">Sorry, your enquiry didn't send. Please try again, or email us directly at <a href="mailto:FrameItSydney@gmail.com">FrameItSydney@gmail.com</a>.</p>
         <p class="f-note">Free consultation, no obligation. We respond within 24 hours.</p>
       </form>
       <div class="form-ok" id="formOk">
@@ -1038,10 +1046,8 @@ const pc=document.getElementById('heroPts');
 })();
 
 /* REVEAL */
-const rvEls=document.querySelectorAll('.rv,.rv-l,.rv-r');
-new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rvEls.forEach&&null}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'}).observe&&
-new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on')}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'}).forEach?null:
-(()=>{const o=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on')}});},{threshold:.1,rootMargin:'0px 0px -28px 0px'});rvEls.forEach(el=>o.observe(el));})();
+const rvObs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rvObs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>rvObs.observe(el));
 
 /* IMAGE CLIP REVEALS */
 ['introF','aboutF'].forEach(id=>{
@@ -1078,7 +1084,7 @@ function gTab(id,btn){
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
 document.querySelectorAll('.g-i').forEach(item=>{
   item.addEventListener('click',()=>{
-    lbImg.src=item.querySelector('img').src.replace(/w=\d+/,'w=1600');
+    lbImg.src=item.querySelector('img').src;
     lb.classList.add('open');document.body.style.overflow='hidden';
   });
 });
@@ -1086,13 +1092,14 @@ function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 
 /* TESTIMONIALS */
-let cur=0,ti=setInterval(()=>goT((cur+1)%3),5500);
+const tN=document.querySelectorAll('.t-slide').length;
+let cur=0,ti=setInterval(()=>goT((cur+1)%tN),5500);
 function goT(i){
   document.querySelectorAll('.t-slide').forEach(s=>s.classList.remove('on'));
   document.querySelectorAll('.t-dot').forEach(d=>d.classList.remove('on'));
   cur=i;document.querySelectorAll('.t-slide')[i].classList.add('on');
   document.querySelectorAll('.t-dot')[i].classList.add('on');
-  clearInterval(ti);ti=setInterval(()=>goT((cur+1)%3),5500);
+  clearInterval(ti);ti=setInterval(()=>goT((cur+1)%tN),5500);
 }
 
 /* FAQ */
@@ -1107,7 +1114,19 @@ function openMob(){document.getElementById('mob').classList.add('open');document
 function closeMob(){document.getElementById('mob').classList.remove('open');document.body.style.overflow=''}
 
 /* FORM */
-function sub(e){e.preventDefault();document.getElementById('form').style.display='none';document.getElementById('formOk').classList.add('show')}
+async function sub(e){
+  e.preventDefault();
+  const f=document.getElementById('form'),btn=f.querySelector('.btn-sub'),err=document.getElementById('formErr');
+  const data=Object.fromEntries(new FormData(f));
+  data._subject='New enquiry: '+(data.event_type||'Event')+' ('+data.first_name+' '+data.last_name+')';
+  data._replyto=data.email;data._template='table';
+  btn.disabled=true;err.classList.remove('show');
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/FrameItSydney@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
+    if(!res.ok)throw new Error(res.status);
+    f.style.display='none';document.getElementById('formOk').classList.add('show');
+  }catch(_){err.classList.add('show');btn.disabled=false}
+}
 
 /* MAGNETIC BUTTONS */
 document.querySelectorAll('.btn-or,.btn-ghost,.nav-btn,.btn-sub').forEach(b=>{
